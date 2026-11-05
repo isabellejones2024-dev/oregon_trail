@@ -1,0 +1,5 @@
+lethality,speed_reduction,time_until_cured
+dysentary, ,
+cholera, ,
+broken arm, , 
+broken leg, ,
