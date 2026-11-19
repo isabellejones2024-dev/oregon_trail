@@ -15,45 +15,41 @@ string RiverEvent::introRiver() {
 	return "You come across a river";
 }
 
+
+
 void RiverEvent::crossRiver(Player& plr) {
-	float chance_of_loss = 0;
-	float amt_of_loss = 0;
+	vector<vector<float>> amount_lost_tiers = { {-1,1.5,3,4}, {15,35,55,75} };
+	vector<vector<float>> chance_lost_tiers = { {-1,2,5,8,10}, {5,20,35,60,85} };
 
-	if (depth < 1.5) {
-		amt_of_loss = 75;
-	}
-	else if (depth < 3) {
-		amt_of_loss = 30;
-	}
-	else if (depth < 4) {
-		amt_of_loss = 70;
+
+	for (int i = 0; i < amount_lost_tiers[0].size(); i++) {
+		if (depth > amount_lost_tiers[0][i]) {
+			amt_of_loss = amount_lost_tiers[1][i];
+		}
 	}
 
-	if (width < 2) {
-		chance_of_loss = 10;
+	for (int i = 0; i < chance_lost_tiers[0].size(); i++) {
+		if (width > chance_lost_tiers[0][i]) {
+			chance_of_loss = chance_lost_tiers[1][i];
+		}
 	}
-	else if (width < 5) {
-		chance_of_loss = 25;
-	}
-	else if (width < 8) {
-		chance_of_loss = 40;
-	}
-	else if (width < 10) {
-		chance_of_loss = 55;
-	}
-	else {
-		chance_of_loss = 70;
-	}
+
 
 	int d_roll = rand() % 100;
-	//cout << "Chance:" << chance_of_loss << " Amount:" << amt_of_loss << " Roll:" << d_roll << endl;
+	float new_val;
+	cout << "Chance:" << 100-chance_of_loss << " Amount:" << amt_of_loss << " Roll:" << d_roll << endl;
 
 	if (d_roll > (100 - chance_of_loss)) {
 		for (auto i = plr.inventory.begin(); i != plr.inventory.end(); i++) {
-			plr.inventory[i->first] = (int)(i->second * (amt_of_loss / 100));
+			new_val = i->second * (amt_of_loss / 100);
+			plr.inventory[i->first] = (int)new_val;
 		}
 	}
 }
+
+
+
+
 ostream& operator<<(ostream& os, Player& plr) {
 	for (auto i = plr.inventory.begin(); i != plr.inventory.end(); i++) {
 		os << i->first << ": " << i->second << endl;

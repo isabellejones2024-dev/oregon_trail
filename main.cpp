@@ -49,13 +49,17 @@ private:
 };
 
 
-
-int main() {
+void tmp() {
 	std::cout << "Hello World!";
-	srand(time(0));
 	std::cout << "\n" << rand() % 500;
 	std::cout << "\n" << rand() % 500;
 	std::cout << "\n" << rand() % 500 << endl;
+}
+
+
+int main() {
+	//tmp();
+	srand(time(0));
 
 	Player abc;
 	abc.inventory = { {"food", 500},{"oxen", 10},

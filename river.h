@@ -18,6 +18,8 @@ public:
 	string name;
 	float depth;
 	float width;
+	float chance_of_loss;
+	float amt_of_loss;
 
 	RiverEvent();
 
