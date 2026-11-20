@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "player.h"
-#include "town.h"
+#include "startTown.h"
 
 using namespace std;
 
