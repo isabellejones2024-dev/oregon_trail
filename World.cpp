@@ -18,8 +18,16 @@ public:
 	int seed = time(0);
 
 	// funciton that handles a day passing, also sets month as appropiate
-	void day_passed() {
+	void day_passed(int& food, int rationing, int& health_status) {
+		food = food - 50 * rationing;
+		//removes some health if rationing is poor, none if its medium, and adds health if rationing is above average
+		health_status = health_status - (2 - rationing);
+		//sets health to 10 if health gets too low, to ensure it doesn't go negative(and to help the function of heatlh events in Party.cpp)
+		if (health_status < 10) {
+			health_status = 10;
+		}
 		day += 1;
+		//handling month changes
 		if (day > 28 && month == 2) {
 			month += 1;
 			day = 1;
