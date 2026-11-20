@@ -1,3 +1,10 @@
+#include "startTown.h"
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
 void startTown(Player&player, int& departureMonth)
 {
     bool choosingMonth = true;
