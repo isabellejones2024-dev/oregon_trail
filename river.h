@@ -25,6 +25,8 @@ public:
 
 	string introRiver();
 
+	void howToCross(Player&);
+
 	void crossRiver(Player&);
 
 	
