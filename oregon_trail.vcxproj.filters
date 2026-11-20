@@ -32,5 +32,8 @@
     <ClInclude Include="river.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="user_input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

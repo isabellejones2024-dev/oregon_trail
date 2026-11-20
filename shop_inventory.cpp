@@ -21,6 +21,7 @@ public:
 class ShopInventory {
 
 	vector<ShopItem> inventory;
+
 	tuple<tuple<int, int>, tuple<int, int>> food_ranges = { {0,600}, {1,4} };
 	tuple<tuple<int, int>, tuple<int, int>> oxen_ranges = { {0,4}, {1,20} };
 	tuple<tuple<int, int>, tuple<int, int>> clothing_ranges = { {0,16}, {1,16} };

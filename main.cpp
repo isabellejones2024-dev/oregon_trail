@@ -3,6 +3,7 @@
 #include <vector>
 #include <ctime>
 #include "river.h"
+#include "user_input.h"
 
 using namespace std;
 
@@ -69,25 +70,19 @@ void tmp2() {
 }
 
 
-string safeUserInputString() {
-	string text;
-	cin >> text;
-
-	if (cin.fail()) {
-		cin.clear();
-		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		text = "";
-	}
-
-	return text;
-}
-
 
 int main() {
 	//tmp();
 	srand(time(0));
+	//tmp2();
 
-	sa
+	int usr_in;
+
+	do {
+		usr_in = safeUserInputInt();
+		cout << usr_in << endl;
+	} while (usr_in != -1);
+	
 
 	return 0;
 }

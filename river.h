@@ -1,5 +1,5 @@
-#ifndef _OREGONTRAIL_
-#define _OREGONTRAIL_
+#ifndef _OT_RIVEREVENT_
+#define _OT_RIVEREVENT_
 #include <vector>
 #include <string>
 #include <iostream>
