@@ -56,11 +56,7 @@ void tmp() {
 	std::cout << "\n" << rand() % 500 << endl;
 }
 
-
-int main() {
-	//tmp();
-	srand(time(0));
-
+void tmp2() {
 	Player abc;
 	abc.inventory = { {"food", 500},{"oxen", 10},
 					{"clothing", 500},{"bullets", 500},
@@ -70,6 +66,28 @@ int main() {
 	riv.crossRiver(abc);
 
 	cout << abc;
+}
+
+
+string safeUserInputString() {
+	string text;
+	cin >> text;
+
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		text = "";
+	}
+
+	return text;
+}
+
+
+int main() {
+	//tmp();
+	srand(time(0));
+
+	sa
 
 	return 0;
 }

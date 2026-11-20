@@ -8,6 +8,13 @@ using namespace std;
 string safeUserInputString() {
 	string text;
 	cin >> text;
-	return "";
+
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		text = "";
+	}
+
+	return text;
 }
 
