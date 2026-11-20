@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="oregon_trail.vcxproj" Id="e4326f1a-34ef-454a-b790-82fbef43b7dc" />
+</Solution>
