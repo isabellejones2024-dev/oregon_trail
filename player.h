@@ -1,3 +1,12 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
+#include <string>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
 struct Inventory
 {
     unordered_map<string, int> supplies = {
@@ -32,3 +41,5 @@ struct Player
 };
 
 double getStartingMoney(const string& occupation);
+
+#endif
